@@ -20,16 +20,15 @@ st.title("Gemini Chatbot")
 
 user_input = st.text_input("You: ")
 reply = get_gemini_response(user_input)
-while user_input == "":
-    if user_input != "":
-            st.write("You:", user_input)
-            st.write("Bot:", reply)
-    chat.append({"role": "user", "content": user_input})
-    chat.append({"role": "assistant", "content": reply})
+if user_input != "":
+        st.write("You:", user_input)
+        st.write("Bot:", reply)
+chat.append({"role": "user", "content": user_input})
+chat.append({"role": "assistant", "content": reply})
 
-    for message in chat:
-        if message['role'] == "user":
-            print(message['content'])
-            st.write("You:", message['content'])
-        else:
-            st.write("Bot:", message['content'])
+for message in chat:
+    if message['role'] == "user":
+        print(message['content'])
+        st.write("You:", message['content'])
+    else:
+        st.write("Bot:", message['content'])
