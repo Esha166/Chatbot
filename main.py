@@ -19,8 +19,8 @@ def get_gemini_response(prompt):
 st.title("Gemini Chatbot")
 
 user_input = st.text_input("You: ")
+reply = get_gemini_response(user_input)
 while user_input == "":
-    reply = get_gemini_response(user_input)
     if user_input != "":
             st.write("You:", user_input)
             st.write("Bot:", reply)
