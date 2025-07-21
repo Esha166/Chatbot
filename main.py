@@ -14,7 +14,7 @@ def get_gemini_response(prompt):
     result = response.json()
     return result['candidates'][0]['content']['parts'][0]['text']
 
-st.set_page_config(page_title="My Custom App", page_icon="🔥")
+st.set_page_config(page_title="Dost app", page_icon="🔥")
 
 # Initialize session state for chat history
 if 'history' not in st.session_state:
